@@ -14,7 +14,7 @@ import os
 # for hugging face space authentication to upload files
 from huggingface_hub import login, HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
-from tourism_project.config import HF_REPO_ID
+
 
 
 
@@ -92,7 +92,7 @@ print(classification_report(ytest, y_pred_test))
 joblib.dump(best_model, "best_tourism_package_prediction_model_v1.joblib")
 
 # Upload to Hugging Face
-repo_id = HF_REPO_ID
+repo_id = "Mahendra87/Tourism-Package-Prediction"
 repo_type = "model"
 
 api = HfApi(token=os.getenv("HF_TOKEN"))
@@ -110,6 +110,6 @@ except RepositoryNotFoundError:
 api.upload_file(
     path_or_fileobj="best_tourism_package_prediction_model_v1.joblib",
     path_in_repo="best_tourism_package_prediction_model_v1.joblib",
-    repo_id=repo_id,
+    repo_id = "Mahendra87/Tourism-Package-Prediction",
     repo_type=repo_type,
 )
