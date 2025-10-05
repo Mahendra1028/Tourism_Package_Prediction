@@ -1,10 +1,10 @@
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 from huggingface_hub import HfApi, create_repo
 import os
-from tourism_project.config.py import HF_REPO_ID
 
 
-repo_id = HF_REPO_ID
+
+repo_id = "Mahendra87/Tourism-Package-Prediction"
 repo_type = "dataset"
 
 # Initialize API client
