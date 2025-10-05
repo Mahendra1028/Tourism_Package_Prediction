@@ -2,11 +2,11 @@ import streamlit as st
 import pandas as pd
 from huggingface_hub import hf_hub_download
 import joblib
-from tourism_project.config import HF_REPO_ID
+
 
 
 # Download and load the model
-model_path = hf_hub_download(repo_id = HF_REPO_ID, filename="best_tourism_package_prediction_model_v1.joblib")
+model_path = hf_hub_download(repo_id = "Mahendra87/Tourism-Package-Prediction", filename="best_tourism_package_prediction_model_v1.joblib")
 model = joblib.load(model_path)
 
 # Streamlit UI for Tourism Package Prediction
