@@ -17,7 +17,12 @@ repo_type = "dataset"
 
 # Define constants for the dataset and output paths
 api = HfApi(token=os.getenv("HF_TOKEN"))
-DATASET_PATH = "/content/tourism_project/data/tourism.csv"
+# DATASET_PATH = "/content/tourism_project/data/tourism.csv"
+# df = pd.read_csv(DATASET_PATH)
+
+# Use relative path (works locally and in GitHub Actions)
+DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
+DATASET_PATH = os.path.join(DATA_DIR, 'tourism.csv')
 df = pd.read_csv(DATASET_PATH)
 print("Dataset loaded successfully.")
 
