@@ -9,10 +9,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 # for hugging face space authentication to upload files
 from huggingface_hub import login, HfApi
-from tourism_project.config import HF_REPO_ID
 
 
-repo_id = HF_REPO_ID
+
+repo_id = "Mahendra87/Tourism-Package-Prediction"
 repo_type = "dataset"
 
 # Define constants for the dataset and output paths
@@ -64,6 +64,6 @@ for file_path in files:
     api.upload_file(
         path_or_fileobj=file_path,
         path_in_repo=file_path.split("/")[-1],  # just the filename
-        repo_id = HF_REPO_ID,
+        repo_id = "Mahendra87/Tourism-Package-Prediction",
         repo_type=repo_type,
     )
